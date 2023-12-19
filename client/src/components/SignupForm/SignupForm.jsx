@@ -6,7 +6,7 @@ import axios from "axios";
 
 const SignupForm = () => {
   const navigate = useNavigate();
-
+  const isAuth= window.localStorage.getItem("isAuth");
   const [user_data, setUserData] = useState({
     username: "",
     email: "",
@@ -55,6 +55,7 @@ const SignupForm = () => {
       
     }
   };
+
   return (
     <div className="signup_form_div" h="700px" pt="30px">
       <div className="signup_form_parent">

@@ -8,7 +8,7 @@ import axios from 'axios'
 const LoginForm = () => {
     const [cookies, setCookie] = useCookies(["access_token"]);
   const navigate = useNavigate();
-
+ const isAuth= window.localStorage.getItem("isAuth");
   const [user_data, setUserData] = useState({ email: "", password: "" });
   const onchange_input = (e) => {
     let value = e.target.name;
@@ -37,7 +37,7 @@ const LoginForm = () => {
       window.localStorage.setItem("email", (result.data.email));
       window.localStorage.setItem("username",(result.data.username));
       window.localStorage.setItem("userId",(result.data.userId));
-      
+      window.localStorage.setItem("isAuth",true);
       console.log("succes")
       console.log(result)
       setTimeout(() => {

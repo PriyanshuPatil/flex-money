@@ -12,6 +12,7 @@ const Navbar = () => {
     // Remove the access_token cookie and perform any other logout logic
     removeCookie('access_token');
     // Redirect the user to the home page after logout
+    window.localStorage.setItem("isAuth",false);
     navigate('/');
   };
 
@@ -22,7 +23,7 @@ const Navbar = () => {
         <div className='menu_item'>
           <div onClick={() => navigate('/')}>Home</div>
           <div onClick={() => navigate('/form')}>Admission Form</div>
-          <div onClick={() => alert('Coming Soon')}>Contact</div>
+          <div onClick={() => navigate('/batch')}>Change Batch</div>
           {cookies.access_token ? (
             <div onClick={handleLogout}>Logout User</div>
           ) : (

@@ -1,0 +1,90 @@
+.batch_form_div {
+    height: 630px;
+    opacity: 100%;
+    padding-top: 10px;
+  }
+  .batch_form_parent {
+    background-color: white;
+    border-radius: 5%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 35%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10%;
+    display: grid;
+    gap: 20px;
+  }
+  .batch_heading {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: green;
+  }
+  .batch_price {
+    text-align: center;
+    font-weight: 500;
+    font-size: 19px;
+  }
+  .batch_options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 80%;
+    margin: auto;
+  }
+  .batch_options > div:nth-child(1) {
+    color: gray;
+    font-weight: 500;
+  }
+  .batch_options > div:nth-child(3) {
+    color: gray;
+    font-weight: 500;
+  }
+  .batch_options > div:nth-child(5) {
+    color: gray;
+    font-weight: 500;
+  }
+  .batch_options > div:nth-child(7) {
+    color: gray;
+    font-weight: 500;
+  }
+  .batch_options > div:nth-child(9) {
+    color: gray;
+    font-weight: 500;
+  }
+  .batch_parent {
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .button_parent > button {
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .button_parent > button:nth-child(1) {
+    background-color: white;
+    color: red;
+    font-weight: 700;
+  }
+  .button_parent > button:nth-child(2) {
+    background-color: green;
+    color: white;
+    font-weight: 700;
+  }
+  @media (min-width: 200px) and (max-width: 700px) {
+    .batch_form_parent {
+      background-color: white;
+      border-radius: 5%;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      width: 65%;
+      padding: 20px;
+      margin: auto;
+      margin-top: 20%;
+      display: grid;
+      gap: 20px;
+    }
+  }

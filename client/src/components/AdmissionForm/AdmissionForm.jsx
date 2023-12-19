@@ -6,7 +6,7 @@ import axios from "axios";
 
 const AdmissionForm = () => {
   const navigate = useNavigate();
-
+  const isAuth= window.localStorage.getItem("isAuth");
   const [user_data, setUserData] = useState({
     name: "",
     email: "",
@@ -26,8 +26,8 @@ const AdmissionForm = () => {
     const res = await axios.get(
       `https://enchanting-teal-llama.cyclic.cloud/admission/single?email=${email}`
     );
-    const dateIs = res.data.data.date.split("-")[1]
-    let today = new Date().toLocaleDateString().split("/")[0]
+    const dateIs = res.data.data.date.split("-")[1] 
+    let today = new Date().toLocaleDateString().split("/")[0] || 
     console.log(today,dateIs)
     if(today == dateIs){
       alert("you have already subscribed for this month");
@@ -45,7 +45,14 @@ const AdmissionForm = () => {
       ...prevUserData,
       name: storedName || "",
       email: storedEmail || "",
-    }));
+    })); 
+    console.log(isAuth,"1")
+    if(isAuth){
+      console.log(isAuth,"2")
+      alert("You Need To Login First")
+      navigate("/login");
+ 
+    }
   }, []);
 
   const handleSubmit = async () => {
@@ -68,6 +75,8 @@ const AdmissionForm = () => {
       }
     }
   };
+  
+  
 
   return (
     <div className="admission_form_div" h="700px" pt="30px">

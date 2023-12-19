@@ -31,7 +31,7 @@ const Payment = () => {
             alert(res.data.msg)
 
             
-            navigate('/')
+            navigate("/batch") 
           } catch (err) {
             console.log(err.message);
           }
